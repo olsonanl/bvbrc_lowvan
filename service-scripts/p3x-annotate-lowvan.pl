@@ -38,6 +38,14 @@ print($usage->text), exit 0 if $opt->help;
 my @stage_params;
 
 #
+# Log versions
+#
+for my $tool (qw(annotate_by_viral_pssm-GTO.pl get_splice_variant_features.pl get_transcript_edited_features.pl viral_genome_quality.pl))
+{
+    system($tool, "--version");
+}
+
+#
 # Stage 1
 #
 

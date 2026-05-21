@@ -38,7 +38,7 @@ TPAGE_ARGS = --define kb_top=$(TARGET) --define kb_runtime=$(DEPLOY_RUNTIME) --d
 	--define kb_starman_max_requests=$(STARMAN_MAX_REQUESTS)
 
 SOURCE_REPO = https://github.com/olsonanl/jdavis_lowvan
-SOURCE_VERSION = v1.0.0
+#SOURCE_VERSION = v1.0.0
 #SOURCE_REPO = https://github.com/jimdavis1/Viral_Annotation
 REPO_DIR = Viral_Annotation
 
@@ -48,7 +48,7 @@ pull-repo: $(REPO_DIR)
 
 $(REPO_DIR): 
 	rm -rf $(REPO_DIR)
-	git clone --branch $(SOURCE_VERSION) --depth 1 $(SOURCE_REPO) $(REPO_DIR)
+	git clone --depth 1 $(SOURCE_REPO) $(REPO_DIR)
 	# Capture git version
 	cd $(REPO_DIR) && perl Other_Scripts/capture_version.pl LowVanVersionData.pm
 
